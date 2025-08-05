@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global font style */
+body {
+  @apply font-sans;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.25s ease forwards;
+}
+
+/* Underline animation */
+.menu-link {
+  position: relative;
+}
+.menu-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  height: 2px;
+  width: 0%;
+  background-color: rgb(168 85 247);
+  transition: width 0.3s ease;
+}
+.menu-link:hover::after {
+  width: 100%;
+}
