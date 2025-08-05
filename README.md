@@ -1,11 +1,17 @@
-title: "Pooja's Portfolio 🌐"
-one_liner: "A sleek, responsive portfolio showcasing my projects, skills, and achievements — built with React, Tailwind CSS, and Framer Motion."
-live_demo: "https://your-portfolio-link.netlify.app"
-tech_stack:
-  - React
-  - Tailwind CSS
-  - Framer Motion
-  - Netlify
-contact:
-  LinkedIn: "https://www.linkedin.com/in/pooja-pathare-902639209/"
-  github: "https://github.com/poojap13"
+# Pooja's Portfolio 🌐  
+
+A sleek and responsive personal portfolio showcasing my **projects**, **skills**, **experience**, and **achievements**.  
+Built with **React**, **Tailwind CSS**, and **Framer Motion**, featuring **dark/light mode**, a **glassmorphism navbar**, and smooth animations.  
+
+## 🚀 Live Demo  
+[**View Portfolio**](https://your-portfolio-link.netlify.app)  
+
+## 🛠 Tech Stack  
+- React  
+- Tailwind CSS  
+- Framer Motion  
+- Netlify  
+
+## 📬 Contact  
+- **LinkedIn**: [linkedin.com/in/poojapathare](https://linkedin.com/in/poojapathare)  
+- **GitHub**: [github.com/poojap13](https://github.com/poojap13)  
