@@ -46,10 +46,10 @@ export default function AchievementsCertifications() {
     <section
       id="achievements-certifications"
       ref={ref}
-      className="min-h-screen bg-gray-900 text-white py-20 px-6 relative transition-colors duration-500"
+      className="min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-white py-20 px-6 relative transition-colors duration-500"
     >
       <motion.h2
-        className="text-4xl font-bold text-center text-purple-300 mb-16"
+        className="text-4xl font-bold text-center text-purple-800 dark:text-purple-300 mb-16"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -59,24 +59,24 @@ export default function AchievementsCertifications() {
 
       {/* Publication Card */}
       <motion.div
-        className="bg-gradient-to-r from-purple-800 to-purple-600 shadow-lg rounded-xl p-8 mb-16 max-w-5xl mx-auto"
+        className="bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-800 dark:to-purple-600 shadow-lg rounded-xl p-8 mb-16 max-w-5xl mx-auto transition-colors duration-500"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h3 className="text-2xl font-bold text-purple-100 mb-3">
+        <h3 className="text-2xl font-bold text-purple-900 dark:text-purple-100 mb-3">
           {publication.title}
         </h3>
-        <p className="text-sm text-gray-300 mb-2">
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
           {publication.publisher} &mdash; {publication.date}
         </p>
-        <p className="text-gray-200 mb-4">{publication.description}</p>
+        <p className="text-gray-700 dark:text-gray-200 mb-4">{publication.description}</p>
         {publication.link && (
           <a
             href={publication.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-white bg-purple-500 hover:bg-purple-400 px-4 py-2 rounded-lg transition"
+            className="inline-block text-purple-700 dark:text-purple-300 hover:underline font-medium"
           >
             View Publication →
           </a>
@@ -100,20 +100,20 @@ export default function AchievementsCertifications() {
             transition={{ delay: index * 0.3 }}
           >
             {/* Dot Marker */}
-            <div className="absolute -left-10 top-1 w-6 h-6 rounded-full bg-purple-500 shadow-md border-4 border-gray-900 z-10" />
+            <div className="absolute -left-10 top-1 w-6 h-6 rounded-full bg-purple-600 shadow-md border-4 border-white dark:border-gray-900 z-10" />
 
             <div
-              className={`bg-gray-800 border-l-4 border-purple-400 p-6 rounded-xl shadow max-w-xl transition-colors duration-500 ${
+              className={`bg-gray-50 dark:bg-gray-800 border-l-4 border-purple-200 dark:border-purple-400 p-6 rounded-xl shadow max-w-xl transition-colors duration-500 ${
                 index % 2 === 0 ? "ml-4 sm:mr-auto" : "ml-4 sm:ml-auto"
               }`}
             >
-              <h3 className="text-xl font-bold text-purple-300">
+              <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300">
                 {cert.title}
               </h3>
-              <p className="text-sm text-gray-400 font-medium mb-2">
+              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium mb-2">
                 {cert.issuer} &mdash; {cert.date}
               </p>
-              <ul className="text-sm text-gray-300 list-disc pl-5 space-y-1">
+              <ul className="text-sm text-gray-700 dark:text-gray-300 list-disc pl-5 space-y-1">
                 {cert.skills.map((skill, i) => (
                   <li key={i}>{skill}</li>
                 ))}
@@ -123,7 +123,7 @@ export default function AchievementsCertifications() {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-3 text-purple-300 hover:text-purple-100 underline text-sm"
+                  className="inline-block mt-3 text-purple-600 dark:text-purple-400 hover:underline text-sm"
                 >
                   View Credential →
                 </a>
