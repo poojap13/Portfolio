@@ -1,13 +1,23 @@
+/* Tailwind base layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global font style */
-body {
-  @apply font-sans;
+/* ------------------------------
+   🌍 Global Styles
+------------------------------ */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Slide down animation */
+body {
+  @apply font-sans bg-white text-gray-900 dark:bg-gray-900 dark:text-white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ------------------------------
+   ⬇️ Slide Down Animation
+------------------------------ */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -23,10 +33,15 @@ body {
   animation: slideDown 0.25s ease forwards;
 }
 
-/* Underline animation */
+/* ------------------------------
+   📎 Underline Hover Animation for Navbar Links
+------------------------------ */
 .menu-link {
   position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
+
 .menu-link::after {
   content: '';
   position: absolute;
@@ -34,9 +49,28 @@ body {
   bottom: 4px;
   height: 2px;
   width: 0%;
-  background-color: rgb(168 85 247);
+  background-color: rgb(168 85 247); /* Tailwind's purple-500 */
   transition: width 0.3s ease;
 }
+
 .menu-link:hover::after {
   width: 100%;
+}
+
+/* ------------------------------
+   ✨ Fade-in Section Animation (Optional)
+------------------------------ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease forwards;
 }
