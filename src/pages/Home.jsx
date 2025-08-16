@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import myPhoto from "../assets/myphoto.jpg"; // This stays in src/assets
+import myPhoto from "../assets/myphoto.jpg"; // Make sure this exists in src/assets
 
 export default function Home() {
   return (
@@ -27,24 +27,44 @@ export default function Home() {
         Pooja Vasant Pathare
       </motion.h1>
 
-      {/* Tagline */}
-      <motion.p
-        className="text-lg md:text-xl mt-3 text-gray-700 dark:text-gray-300 max-w-xl text-center"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
-        Aspiring Data & AI Professional | MLOps Intern @Vosyn | MSc CS @Lakehead
-        <br />
-        <strong>AI/ML • MLOps • SQL • Python</strong> | Seeking Full-Time Roles
-      </motion.p>
+      {/* Taglines animated one-by-one */}
+      <div className="text-lg md:text-xl mt-3 text-gray-700 dark:text-gray-300 max-w-xl text-center space-y-1">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          Aspiring Data & AI Professional
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+        >
+          MLOps Intern @Vosyn | MSc CS @Lakehead
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.3 }}
+        >
+          <strong>AI/ML • MLOps • SQL • Python</strong>
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.7 }}
+        >
+          Seeking Full-Time Roles
+        </motion.p>
+      </div>
 
       {/* Buttons */}
       <motion.div
         className="mt-8 flex gap-6"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.7 }}
+        transition={{ delay: 2.1 }}
       >
         {/* Download Resume */}
         <a
