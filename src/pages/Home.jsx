@@ -1,7 +1,30 @@
 import { motion } from "framer-motion";
-import myPhoto from "../assets/myphoto.jpg"; // Make sure this exists in src/assets
+import { useEffect, useState } from "react";
+import myPhoto from "../assets/myphoto.jpg";
 
 export default function Home() {
+  const taglines = [
+    "Aspiring Data & AI Professional | MLOps Intern @Vosyn | MSc CS @Lakehead",
+    "AI/ML • MLOps • SQL • Python | Seeking Full-Time Roles",
+  ];
+
+  const [index, setIndex] = useState(0);
+  const [show, setShow] = useState(true);
+
+  // Switch sentences every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setShow(false); // Fade out
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % taglines.length);
+        setShow(true); // Fade in new
+      }, 600);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const words = taglines[index].split(" ");
+
   return (
     <section
       id="home"
@@ -27,46 +50,38 @@ export default function Home() {
         Pooja Vasant Pathare
       </motion.h1>
 
-      {/* Taglines animated one-by-one */}
-      <div className="text-lg md:text-xl mt-3 text-gray-700 dark:text-gray-300 max-w-xl text-center space-y-1">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          Aspiring Data & AI Professional
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
-        >
-          MLOps Intern @Vosyn | MSc CS @Lakehead
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3 }}
-        >
-          <strong>AI/ML • MLOps • SQL • Python</strong>
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.7 }}
-        >
-          Seeking Full-Time Roles
-        </motion.p>
-      </div>
+      {/* Tagline */}
+      <motion.div
+        className="text-lg md:text-xl mt-4 text-gray-700 dark:text-gray-300 max-w-2xl text-center min-h-[70px]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: show ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flex flex-wrap justify-center">
+          {words.map((word, i) => (
+            <motion.span
+              key={i}
+              className="mx-1"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: i * 0.15,
+                duration: 0.3,
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Buttons */}
       <motion.div
         className="mt-8 flex gap-6"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 2.1 }}
+        transition={{ delay: 0.7 }}
       >
-        {/* Download Resume */}
         <a
           href="/pooja_resume.pdf"
           download="Pooja_Pathare_Resume.pdf"
@@ -75,7 +90,6 @@ export default function Home() {
           Download Resume
         </a>
 
-        {/* Contact Me */}
         <a
           href="#contact"
           className="border-2 border-purple-600 text-purple-700 dark:text-purple-300 px-6 py-2 rounded-lg hover:bg-purple-100 dark:hover:bg-gray-700 transition duration-300"
