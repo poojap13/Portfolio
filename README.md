@@ -4,7 +4,7 @@ A sleek and responsive personal portfolio showcasing my **projects**, **skills**
 Built with **React**, **Tailwind CSS**, and **Framer Motion**, featuring **dark/light mode**, a **glassmorphism navbar**, and smooth animations.  
 
 ## 🚀 Live Demo  
-[**View Portfolio**](https://your-portfolio-link.netlify.app)  
+[**View Portfolio**](https://portfolio-poo.netlify.app/)  
 
 ## 🛠 Tech Stack  
 - React  
